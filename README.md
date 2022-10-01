@@ -2,6 +2,8 @@
 
 = PoseOSC + FaceOSC + HandOSC + OcrOSC + CatOSC + DogOSC
 
+**[Download](https://github.com/LingDong-/VisionOSC/releases)** | **[Example](demos/VisionOSCProcessingReceiver/VisionOSCProcessingReceiver.pde)**
+
 Send (almost) all Apple [Vision](https://developer.apple.com/documentation/vision) Framework's detection results via [OSC](https://opensoundcontrol.stanford.edu/). (You can pick which one(s) to detect & send). Written in [openFrameworks](https://openframeworks.cc/) using Objective-C++. macOS 11+ only. 
 
 ![](screenshots/screenshot000.png)
@@ -22,7 +24,7 @@ Do not attempt to re-build (with projectGenerator) unless absolutely necessary, 
 
 Settings in `settings.xml` will be loaded upon start.
 
-See **[demos/VisionOSCProcessingReceiver](demos/VisionOSCProcessingReceiver)** for a [Processing](https://processing.org/) demo receiving all the detection types.
+See [demos/VisionOSCProcessingReceiver](demos/VisionOSCProcessingReceiver) for a [Processing](https://processing.org/) demo receiving all the detection types.
 
 ### Receiving Poses from OSC
 
@@ -82,3 +84,18 @@ Similar to texts format (see above); sent to `animals/arr` OSC Address:
 The `JSON` and `XML` formats supported by PoseOSC are now excluded because I've since realized it's a silly idea to add this sort of parsing overhead. Let me know if you have a case against this decision.
 
 I recommand [Protokol](https://hexler.net/protokol) for testing/inspecting OSC.
+
+
+## Framerates
+
+Tested on MacBook Pro (13-inch, M1, 2020) Memory 16 GB.
+
+- Body: 60 FPS
+- Hand: 60 FPS
+- Face: 45 FPS
+- Text: 10 FPS
+- Animal: 60FPS
+- Face, body, & hand: 25 FPS
+- Everything all on: 5 FPS
+
+
