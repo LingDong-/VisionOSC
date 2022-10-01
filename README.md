@@ -22,7 +22,7 @@ Do not attempt to re-build (with projectGenerator) unless absolutely necessary, 
 
 Settings in `settings.xml` will be loaded upon start.
 
-See [demos/VisionOSCProcessingReceiver](demos/VisionOSCProcessingReceiver) for a [Processing](https://processing.org/) demo receiving all the detection types.
+See **[demos/VisionOSCProcessingReceiver](demos/VisionOSCProcessingReceiver)** for a [Processing](https://processing.org/) demo receiving all the detection types.
 
 ### Receiving Poses from OSC
 
@@ -79,4 +79,6 @@ Similar to texts format (see above); sent to `animals/arr` OSC Address:
 - The next 6 values are data for the first animal, and the 6 values after that are data for the second animal (if there is), and so on...
 - For each animal, the first value (float) is the score for that animal, the next four values (float) are the (left,top,width,height) of the bounding box. The last value is what the animal is (string): "Cat"/"Dog".
 
-The `JSON` and `XML` formats
+The `JSON` and `XML` formats supported by PoseOSC are now excluded because I've since realized it's a silly idea to add this sort of parsing overhead. Let me know if you have a case against this decision.
+
+I recommand [Protokol](https://hexler.net/protokol) for testing/inspecting OSC.
