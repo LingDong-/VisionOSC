@@ -14,11 +14,12 @@
 
 -(NSArray*)detect:(CGImageRef)image{
 
-  VNDetectFaceLandmarksRequest *req = [VNDetectFaceLandmarksRequest new];
-  NSDictionary *d = [[NSDictionary alloc] init];
-  VNImageRequestHandler *handler = [[VNImageRequestHandler alloc] initWithCGImage:image options:d];
+  VNDetectFaceLandmarksRequest *req = [[VNDetectFaceLandmarksRequest new] autorelease];
+  NSDictionary *d = [[[NSDictionary alloc] init] autorelease];
+  VNImageRequestHandler *handler = [[[VNImageRequestHandler alloc] initWithCGImage:image options:d] autorelease];
 
   [handler performRequests:@[req] error:nil];
+
 
   return req.results;
 }
@@ -32,9 +33,9 @@ void FACE::detect(ofPixels pix)
 {
   CGImageRef image = CGImageRefFromOfPixels(pix,(int)pix.getWidth(),(int)pix.getHeight(),(int)pix.getNumChannels());
   NSArray* arr = [tracker detect:image];
-  NSError *err;
 
-
+ 
+  
   n_det = 0;
   
   for(VNFaceObservation *observation in arr){
@@ -67,6 +68,7 @@ void FACE::detect(ofPixels pix)
   }
   
   CGImageRelease(image);
+
 }
 
 CGImageRef FACE::CGImageRefFromOfPixels( ofPixels & img, int width, int height, int numberOfComponents ){

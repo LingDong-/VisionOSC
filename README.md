@@ -24,6 +24,8 @@ Do not attempt to re-build (with projectGenerator) unless absolutely necessary, 
 
 Settings in `settings.xml` will be loaded upon start.
 
+In the packaged app, the `settings.xml` can be found in `Contents/Resources`.
+
 See [demos/VisionOSCProcessingReceiver](demos/VisionOSCProcessingReceiver) for a [Processing](https://processing.org/) demo receiving all the detection types.
 
 ### Receiving Poses from OSC
