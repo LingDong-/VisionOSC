@@ -20,6 +20,11 @@ Do not attempt to re-build (with projectGenerator) unless absolutely necessary, 
 - Change deployment target to 11.3
 - For each file in src folder, on right sidebar, change file "Type" to Objective C++ (not extension, just in the dropdown menu)
 
+
+If you encounter `Undefined symbol: __objc_msgSend$identifier`, you might need to set `Excluded Architectures arm64`. See [this issue](https://github.com/LingDong-/VisionOSC/issues/2) for details.
+
+If there're some complaints about ARC, you might need to remove all mentions of `autorelease` in `src` folder.
+
 ## How to Use
 
 Settings in `settings.xml` will be loaded upon start.
