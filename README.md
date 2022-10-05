@@ -32,7 +32,7 @@ This is the same as [`ARR` format of PoseOSC](https://github.com/LingDong-/PoseO
 
 ARR will be sent to `poses/arr` OSC Address as an array of values (OSC spec allows multiple values of different types for each address).
 
-- The frist value (int) is width of the frame.
+- The first value (int) is width of the frame.
 - The second value (int) is height of the frame.
 - The third value (int) is the number of poses. (When you read this value, you'll know how many more values to read, i.e. `nPoses*(1+17*3)`. So if this number is 0 it means no pose is detected, so you can stop reading).
 - The next 52 values are data for the first pose, and the 52 values after that are data for the second pose (if there is), and so on...
@@ -42,7 +42,7 @@ ARR will be sent to `poses/arr` OSC Address as an array of values (OSC spec allo
 
 Similar to pose format (see above); sent to `faces/arr` OSC Address:
 
-- The frist value (int) is width of the frame.
+- The first value (int) is width of the frame.
 - The second value (int) is height of the frame.
 - The third value (int) is the number of faces.
 - The next 229 values are data for the first face, and the 229 values after that are data for the second face (if there is), and so on...
@@ -52,7 +52,7 @@ Similar to pose format (see above); sent to `faces/arr` OSC Address:
 
 Similar to pose format (see above); sent to `hands/arr` OSC Address:
 
-- The frist value (int) is width of the frame.
+- The first value (int) is width of the frame.
 - The second value (int) is height of the frame.
 - The third value (int) is the number of hands.
 - The next 64 values are data for the first hand, and the 64 values after that are data for the second hand (if there is), and so on...
@@ -63,7 +63,7 @@ Similar to pose format (see above); sent to `hands/arr` OSC Address:
 
 Sent to `texts/arr` OSC Address:
 
-- The frist value (int) is width of the frame.
+- The first value (int) is width of the frame.
 - The second value (int) is height of the frame.
 - The third value (int) is the number of text regions.
 - The next 6 values are data for the first text, and the 6 values after that are data for the second text (if there is), and so on...
@@ -75,7 +75,7 @@ Currently only cats and dogs are supported, per [Apple's documentation](https://
 
 Similar to texts format (see above); sent to `animals/arr` OSC Address:
 
-- The frist value (int) is width of the frame.
+- The first value (int) is width of the frame.
 - The second value (int) is height of the frame.
 - The third value (int) is the number of animals.
 - The next 6 values are data for the first animal, and the 6 values after that are data for the second animal (if there is), and so on...

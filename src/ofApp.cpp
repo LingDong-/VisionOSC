@@ -2,6 +2,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+  ofSetDataPathRoot("../Resources/");
+  
   gui.setup("", "settings.xml");
   
   gui.add(osc_group);
