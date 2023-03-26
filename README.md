@@ -14,11 +14,16 @@ Inspired by [PoseOSC](https://github.com/LingDong-/PoseOSC), but faster, no more
 
 Do not attempt to re-build (with projectGenerator) unless absolutely necessary, in which case follow the following steps:
 
-- File > Project Settings, Build System -> New Build System
+
 - Left sidebar, click project name, General > Frameworks, Libraries,... Add Vision, AVKit, Foundation, AVFoundation, CoreML
-- Build Phases, Link Binary with Libraries, Change "mac catalyst" to "always"
+- - For each file in src folder, on right sidebar, change file "Type" to Objective C++ (not extension, just in the dropdown menu)
+
+The following steps were not needed with MBP M1 + macOS 12.6.3 + XCode 13.4.1 + of_v20230326_osx_release)
+
+- File > Project Settings, Build System -> New Build System
+- Build Phases, Link Binary with Libraries, Change "mac catalyst" to "always" 
 - Change deployment target to 11.3
-- For each file in src folder, on right sidebar, change file "Type" to Objective C++ (not extension, just in the dropdown menu)
+
 
 
 If you encounter `Undefined symbol: __objc_msgSend$identifier`, you might need to set `Excluded Architectures arm64`. See [this issue](https://github.com/LingDong-/VisionOSC/issues/2) for details.
@@ -106,3 +111,15 @@ Tested on MacBook Pro (13-inch, M1, 2020) Memory 16 GB.
 - Everything all on: 5 FPS
 
 
+## extra screenshots
+![](screenshots/2p1la.png)
+*68 face landmark indices*
+
+![](screenshots/screenshot001.jpg)
+*face feature drawing*
+
+![](screenshots/fileType.jpg)
+*batch redfine file type to Objective C++*
+
+![](screenshots/frameworks.jpg)
+*all needed frameworks*

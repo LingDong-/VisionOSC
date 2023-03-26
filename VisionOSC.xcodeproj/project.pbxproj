@@ -660,13 +660,13 @@
 				"{FB15F362-58DF-4BEA-B57F-D82234DAACC0}" /* text.h */,
 				"{98DBF74E-8EA6-49CF-BE72-62B626653CA3}" /* body.h */,
 				"{36636A9B-8D46-4A71-95D8-60B3D80B2949}" /* hand.h */,
+				"{C25835EF-7DB5-4393-94E8-0765CF934929}" /* face.h */,
 				"{E44845C6-C905-464B-87C5-472B30A50993}" /* face.mm */,
 				"{5248DE3C-AE39-4AA0-ADEE-DC91617496D4}" /* hand.mm */,
 				"{ADA9285A-77F8-4334-9F24-6F20FE8EFC90}" /* body.mm */,
 				"{C07FA768-19F2-4491-B3EB-28BB5E8650A2}" /* constants.h */,
 				"{90ED5C7A-F9B7-4846-9006-0C075B03EDD3}" /* animal.h */,
 				"{B463D1E7-9CA8-4814-A59F-7C28403F8FC3}" /* animal.mm */,
-				"{C25835EF-7DB5-4393-94E8-0765CF934929}" /* face.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;

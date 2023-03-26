@@ -28,6 +28,21 @@ class FACE;
 
 class FACE{
 public:
+    enum Feature {
+        RIGHT_EYEBROW,
+        LEFT_EYEBROW,
+        RIGHT_EYECONTOUR,
+        LEFT_EYECONTOUR,
+        OUTER_LIPS,
+        INNER_LIPS,
+        FACE_CONTOUR,
+        NOSE_CREST,
+        MEIDAN_LINE,
+        RIGHT_PUPIL,
+        LEFT_PUPIL,
+        ALL_FEATURES
+    };
+    
   FACE();
   void detect(ofPixels image);
   CGImageRef CGImageRefFromOfPixels( ofPixels & img, int width, int height, int numberOfComponents );
@@ -38,9 +53,18 @@ public:
     
   ofVec3f orientations[MAX_DET];
   
+    void draw();
+    void drawFeatures();
+    void drawInfo(int _x, int _y);
+    
+    vector<ofRectangle> boundingRects;
+    ofPolyline getFeature(int _n_det, Feature feature);
 protected:
   
  Face* tracker;
+
+    static std::vector<int> consecutive(int start, int end);
+    static  std::vector<int> getFeatureIndices(Feature feature);
 
 };
 
