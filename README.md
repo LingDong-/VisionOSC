@@ -16,7 +16,7 @@ Do not attempt to re-build (with projectGenerator) unless absolutely necessary, 
 
 
 - Left sidebar, click project name, General > Frameworks, Libraries,... Add Vision, AVKit, Foundation, AVFoundation, CoreML
-- - For each file in src folder, on right sidebar, change file "Type" to Objective C++ (not extension, just in the dropdown menu)
+- For each file in src folder, on right sidebar, change file "Type" to Objective C++ (not extension, just in the dropdown menu)
 
 The following steps were not needed with MBP M1 + macOS 12.6.3 + XCode 13.4.1 + of_v20230326_osx_release)
 
