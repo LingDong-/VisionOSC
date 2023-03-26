@@ -155,11 +155,11 @@ void ofApp::draw(){
   if (do_face){
     ofPushStyle();
     for (int i = 0; i < face.n_det; i++){
-      ofFill();
-      ofSetColor(255,0,255);
-      for (int j = 0; j < FACE_N_PART; j++){
-        ofDrawCircle(face.detections[i][j].x, face.detections[i][j].y, 5);
-      }
+//      ofFill();
+//      ofSetColor(255,0,255);
+//      for (int j = 0; j < FACE_N_PART; j++){
+//        ofDrawCircle(face.detections[i][j].x, face.detections[i][j].y, 5);
+//      }
   
       // face orientation: extremely choppy
       // seems to only support 45deg increments, X-axis not supported
@@ -173,6 +173,7 @@ void ofApp::draw(){
   //    ofDrawBox(-50,-50,-50,100,100,100);
   //    ofPopMatrix();
     }
+      face.draw();
       face.drawFeatures();
     ofPopStyle();
   }

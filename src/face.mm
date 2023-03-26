@@ -54,7 +54,7 @@ void FACE::detect(ofPixels pix)
  
   
   n_det = 0;
-  
+    boundingRects.clear();
   for(VNFaceObservation *observation in arr){
     CGFloat x = pix.getWidth()*observation.boundingBox.origin.x;
     CGFloat y = pix.getHeight()*(1-observation.boundingBox.origin.y-observation.boundingBox.size.height);
@@ -120,15 +120,17 @@ CGImageRef FACE::CGImageRefFromOfPixels( ofPixels & img, int width, int height, 
 
 
 void FACE::draw(){
-    ofPushStyle();
+//    ofPushStyle();
     for (int i = 0; i < n_det; i++){
         
         ofColor faceColor = ofColor((i*23+311)%200, (i*41+431)%200, (i*33+197)%200);
         ofSetColor(faceColor);
         
-        ofNoFill();
-        ofDrawRectangle(boundingRects[i]);
-        
+        if(i < boundingRects.size()){
+            ofLog()<<i<<" boundingRects "<<boundingRects[i];
+            ofNoFill();
+            ofDrawRectangle(boundingRects[i]);
+        }
         
         ofFill();
         for (int j = 0; j < FACE_N_PART; j++){
@@ -149,12 +151,13 @@ void FACE::draw(){
         stringstream ss;
         ss<<"id "<<i<<" : score "<<scores[i];
         ofBitmapFont bitFont;
-        ofRectangle bbox = bitFont.getBoundingBox(ss.str(), detections[i][BODY_NOSE].x,detections[i][BODY_NOSE].y);
-        float eyeDist = detections[i][BODY_LEFTEYE].distance(detections[i][BODY_RIGHTEYE]);
-        ofDrawBitmapStringHighlight(ss.str(),bbox.getPosition() - ofVec3f(bbox.getWidth()/2,bbox.getHeight(),0) - ofVec3f(0,eyeDist*2,0) ,ofColor::black,ofColor::yellow);
+        ofRectangle bbox = bitFont.getBoundingBox(ss.str(), 0,0);
+        bbox.setX(boundingRects[i].getCenter().x-bbox.getWidth()/2);
+        bbox.setY(boundingRects[i].getTop()-bbox.getHeight());
+        ofDrawBitmapStringHighlight(ss.str(),bbox.getPosition(),ofColor::black,ofColor::yellow);
         
     }
-    ofPopStyle();
+//    ofPopStyle();
 }
 void FACE::drawFeatures(){
     ofPushStyle();
