@@ -19,9 +19,9 @@
 //  NSDictionary *d = [[[NSDictionary alloc] init] autorelease];
 //  VNImageRequestHandler *handler = [[[VNImageRequestHandler alloc] initWithCGImage:image options:d] autorelease];
   
-  VNDetectHumanBodyPoseRequest *req = [[VNDetectHumanBodyPoseRequest new] autorelease];
-  NSDictionary *d = [[[NSDictionary alloc] init] autorelease];
-  VNImageRequestHandler *handler = [[[VNImageRequestHandler alloc] initWithCGImage:image options:d] autorelease];
+  VNDetectHumanBodyPoseRequest *req = [VNDetectHumanBodyPoseRequest new];
+  NSDictionary *d = [[NSDictionary alloc] init];
+  VNImageRequestHandler *handler = [[VNImageRequestHandler alloc] initWithCGImage:image options:d];
 
   [handler performRequests:@[req] error:nil];
 
