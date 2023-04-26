@@ -14,9 +14,9 @@
 
 -(NSArray*)detect:(CGImageRef)image{
 
-  VNRecognizeAnimalsRequest *req = [[VNRecognizeAnimalsRequest new] autorelease];
-  NSDictionary *d = [[[NSDictionary alloc] init] autorelease];
-  VNImageRequestHandler *handler = [[[VNImageRequestHandler alloc] initWithCGImage:image options:d] autorelease];
+  VNRecognizeAnimalsRequest *req = [VNRecognizeAnimalsRequest new];
+  NSDictionary *d = [[NSDictionary alloc] init];
+  VNImageRequestHandler *handler = [[VNImageRequestHandler alloc] initWithCGImage:image options:d];
 
   [handler performRequests:@[req] error:nil];
 
