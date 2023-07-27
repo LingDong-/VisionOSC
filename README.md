@@ -4,6 +4,8 @@
 
 **[Download](https://github.com/LingDong-/VisionOSC/releases)** | **[Example](demos/VisionOSCProcessingReceiver/VisionOSCProcessingReceiver.pde)**
 
+**[简体中文]（./README_CN.md）**
+
 Send (almost) all Apple [Vision](https://developer.apple.com/documentation/vision) Framework's detection results via [OSC](https://opensoundcontrol.stanford.edu/). (You can pick which one(s) to detect & send). Written in [openFrameworks](https://openframeworks.cc/) using Objective-C++. macOS 11+ only. 
 
 ![](screenshots/screenshot000.png)
