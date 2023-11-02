@@ -53,7 +53,8 @@ Similar to pose format (see above); sent to `faces/arr` OSC Address:
 - The second value (int) is height of the frame.
 - The third value (int) is the number of faces.
 - The next 229 values are data for the first face, and the 229 values after that are data for the second face (if there is), and so on...
-- For each face, the first value (float) is the score for that face, the rest 228 values (floats) can be divided into 76 groups of 3, with each group being (x,y,score) of a keypoint.
+- For each face, the first value (float) is the score for that face, the rest 228 values (floats) can be divided into 76 groups of 3, with each group being (x,y,score) of a keypoint
+- To be specific, the order of data is left eye - right eye - mouth - nose - face outline, see [facepose spec](https://github.com/chanulee/cote-bloom/tree/main/appendix/visionOscDatapoints)
 
 ### Receiving Hands from OSC
 
